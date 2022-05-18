@@ -19,9 +19,17 @@ public class Main {
         }
          */
 
+        System.out.println("MELONES BAILAN:");
         List<Melon> bailan = Filters.filterByType(melons, "Bailan");
         System.out.println(bailan);
 
+        System.out.println("MELONES DE UN PESO DE 1200g:");
+        List<Melon> melons1200 = Filters.filterByWeight(melons,1200);
+        System.out.println(melons1200);
+
+        System.out.println("MELONES DE UN PESO IGUAL O SUPERIOR A 3000:");
+        List<Melon> melonsMas3000 = Filters.filterByWeightMasgrande(melons,3000);
+        System.out.println(melonsMas3000);
     }
 
 }
