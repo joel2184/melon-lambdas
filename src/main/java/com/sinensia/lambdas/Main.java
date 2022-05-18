@@ -44,10 +44,19 @@ public class Main {
         System.out.println(melonsSuperHeavy);
 
         System.out.println("LISTA DE SANDIAS: ");
-        List<Melon> watermelons = Filters.filter(melons, (Melon m)->m.getType().equalsIgnoreCase("watermelon"));
+        List<Melon> watermelons = Filters.filter(melons, (Melon m) -> m.getType().equalsIgnoreCase("watermelon"));
         for(Melon m: watermelons) {
             System.out.println(m);
         }
+
+        System.out.println("STREAM DE MELONES");
+        melons.stream().forEach(m -> System.out.println(m));
+
+        System.out.println("STREAM DE MELONES FILTRADOS");
+        melons.stream()
+                .filter(melon -> "gac".equalsIgnoreCase(melon.getType()))
+                .forEach(m -> System.out.println(m));
+
     }
 
 }
