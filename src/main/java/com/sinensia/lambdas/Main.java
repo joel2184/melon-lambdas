@@ -32,8 +32,7 @@ public class Main {
         System.out.println(melonsMas3000);
 
         System.out.println("MELONES GAC:");
-        MelonPedicate gacMelonPredicate = new GacMelonPredicate();
-        List<Melon> melonsGa = Filters.filterMelon(melons, gacMelonPredicate);
+        List<Melon> melonsGa = Filters.filterMelon(melons, new GacMelonPredicate());
         System.out.println(melonsGa);
     }
 
