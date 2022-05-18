@@ -40,13 +40,14 @@ public class Main {
         System.out.println(melonsHeavy);
 
         System.out.println("MELONES DE UN SUPER PESO:");
-        List<Melon> melonsSuperHeavy = Filters.filterMelon(melons, new MelonPedicate() {
-            @Override
-            public boolean Test(Melon melon) {
-                return melon!=null && melon.getWeight() >= 6000;
-            }
-        });
+        List<Melon> melonsSuperHeavy = Filters.filterMelon(melons, melon -> melon!=null && melon.getWeight() >= 6000);
         System.out.println(melonsSuperHeavy);
+
+        System.out.println("LISTA DE SANDIAS: ");
+        List<Melon> watermelons = Filters.filter(melons, (Melon m)->m.getType().equalsIgnoreCase("watermelon"));
+        for(Melon m: watermelons) {
+            System.out.println(m);
+        }
     }
 
 }
