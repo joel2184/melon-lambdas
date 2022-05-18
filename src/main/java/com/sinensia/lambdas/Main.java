@@ -58,7 +58,7 @@ public class Main {
                 .forEach(m -> System.out.println(m));
 
         //Verificar si un objeto existe con OPTIONAL
-        System.out.println("STREAM CON OPTIONAL");
+        System.out.println("CONJUNTO DE STREAM");
         Optional<Melon> primero = melons.stream().findFirst();
         if (primero.isPresent()){
             System.out.println(primero.get());
@@ -66,6 +66,12 @@ public class Main {
 
         //Versión reducida
         primero.ifPresent(melon -> System.out.println(melon));
+
+        //Versión sin optinal explícito
+        melons.stream().findFirst().ifPresent(melon -> System.out.println(melon));
+
+        System.out.println("PROMEDIO DEL PESO DE LA LISTA DE MELONES");
+        melons.stream().mapToInt(m -> m.getWeight()).average().ifPresent(av -> System.out.println("El peso promedio es " + av));
     }
 
 }
