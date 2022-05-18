@@ -57,6 +57,15 @@ public class Main {
                 .filter(melon -> "gac".equalsIgnoreCase(melon.getType()))
                 .forEach(m -> System.out.println(m));
 
+        //Verificar si un objeto existe con OPTIONAL
+        System.out.println("STREAM CON OPTIONAL");
+        Optional<Melon> primero = melons.stream().findFirst();
+        if (primero.isPresent()){
+            System.out.println(primero.get());
+        }
+
+        //Versión reducida
+        primero.ifPresent(melon -> System.out.println(melon));
     }
 
 }
