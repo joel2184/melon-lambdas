@@ -30,6 +30,11 @@ public class Main {
         System.out.println("MELONES DE UN PESO IGUAL O SUPERIOR A 3000:");
         List<Melon> melonsMas3000 = Filters.filterByWeightMasgrande(melons,3000);
         System.out.println(melonsMas3000);
+
+        System.out.println("MELONES GAC:");
+        MelonPedicate gacMelonPredicate = new GacMelonPredicate();
+        List<Melon> melonsGa = Filters.filterMelon(melons, gacMelonPredicate);
+        System.out.println(melonsGa);
     }
 
 }

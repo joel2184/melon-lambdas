@@ -79,4 +79,23 @@ public final class Filters {
         return result;
     }
 
+    public static List<Melon> filterMelon(List<Melon> melons, MelonPedicate predicate){
+        if(melons == null) {
+            throw new IllegalArgumentException("Melons/type cannot be null");
+        }
+
+        if (melons.isEmpty()){
+            return melons;
+        }
+
+        List<Melon> result = new ArrayList<>();
+
+        for (Melon m : melons)
+        {
+            if(m!=null && predicate.Test(m)){
+                result.add(m);
+            }
+        }
+        return result;
+    }
 }
