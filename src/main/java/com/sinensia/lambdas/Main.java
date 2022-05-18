@@ -27,13 +27,26 @@ public class Main {
         List<Melon> melons1200 = Filters.filterByWeight(melons,1200);
         System.out.println(melons1200);
 
-        System.out.println("MELONES DE UN PESO IGUAL O SUPERIOR A 3000:");
-        List<Melon> melonsMas3000 = Filters.filterByWeightMasgrande(melons,3000);
+        System.out.println("MELONES DE UN PESO IGUAL O SUPERIOR A 4000:");
+        List<Melon> melonsMas3000 = Filters.filterByWeightMasgrande(melons,4000);
         System.out.println(melonsMas3000);
 
         System.out.println("MELONES GAC:");
         List<Melon> melonsGa = Filters.filterMelon(melons, new GacMelonPredicate());
         System.out.println(melonsGa);
+
+        System.out.println("MELONES DE UN PESO IGUAL O SUPERIOR A 4000:");
+        List<Melon> melonsHeavy = Filters.filterMelon(melons, new HeavyMelonPredicate());
+        System.out.println(melonsHeavy);
+
+        System.out.println("MELONES DE UN SUPER PESO:");
+        List<Melon> melonsSuperHeavy = Filters.filterMelon(melons, new MelonPedicate() {
+            @Override
+            public boolean Test(Melon melon) {
+                return melon!=null && melon.getWeight() >= 6000;
+            }
+        });
+        System.out.println(melonsSuperHeavy);
     }
 
 }
