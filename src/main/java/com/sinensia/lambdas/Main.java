@@ -19,19 +19,9 @@ public class Main {
         }
          */
 
-        List<Melon> bailan = filterByType(melons, "Bailan");
+        List<Melon> bailan = Filters.filterByType(melons, "Bailan");
         System.out.println(bailan);
 
     }
-    public static List<Melon> filterByType(List<Melon> melones,String type)
-    {
-        List<Melon> result = new ArrayList<>();
 
-        for (Melon m : melones)
-        {
-            if (m.getType().equals(type))
-                result.add(m);
-        }
-        return result;
-    }
 }
